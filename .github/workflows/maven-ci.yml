@@ -54,6 +54,9 @@ jobs:
   # Uploads dependency graph to GitHub to receive Dependabot alerts 
   update_dependence_graph:
 
+    # Require that this runs after maven_test, so necessary cache is created.
+    needs: [maven_test]
+
     runs-on: ubuntu-latest
 
     permissions:
